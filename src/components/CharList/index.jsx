@@ -42,12 +42,12 @@ const CharList = ({ char, error }) => {
                   </td>
                   <td className="charList__char_info">
                     {character.series.items.slice(0, 3).map((serie) => {
-                      return <p>{serie.name}</p>;
+                      return <p key={serie.name}>{serie.name}</p>;
                     })}
                   </td>
                   <td className="charList__char_info">
                     {character.events.items.slice(0, 3).map((event) => {
-                      return <p>{event.name}</p>;
+                      return <p key={event.name}>{event.name}</p>;
                     })}
                   </td>
                 </tr>

@@ -61,7 +61,7 @@ const HeroDetails = () => {
           {console.log("QUADRIN", comic)}
           {comic?.slice(0, 5).map((item) => {
             return (
-              <li>
+              <li key={item.title}>
                 <div className="hero_details__comic_details">
                   {item.title}
                   <img

@@ -55,7 +55,7 @@ const SearchPage = () => {
         </form>
         <CharList char={char} error={error} />
       </div>
-      <Footer showBtn />
+      <Footer showBtn={error ? false : true} />
     </>
   );
 };
