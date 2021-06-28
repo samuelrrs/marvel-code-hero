@@ -9,21 +9,26 @@ import Footer from "../../components/Footer";
 const SearchPage = () => {
   const [char, setChar] = useState([]);
   const [value, setValue] = useState("");
+  const [error, setError] = useState(false);
   const { page, publicKey, time, hash, limit } = PageData();
 
   useEffect(() => {
     const load = async () => {
-      if (value === "") {
-        const data = await axios.get(
-          `${api}characters?&limit=${limit}&offset=${page}&ts=${time}&apikey=${publicKey}&hash=${hash}`
-        );
-        setChar(data.data.data.results);
-      }
-      if (value.length >= 3) {
-        const data = await axios.get(
-          `${api}characters?nameStartsWith=${value}&ts=${time}&apikey=${publicKey}&hash=${hash}`
-        );
-        setChar(data.data.data.results);
+      try {
+        if (value === "") {
+          const data = await axios.get(
+            `${api}characters?&limit=${limit}&offset=${page}&ts=${time}&apikey=${publicKey}&hash=${hash}`
+          );
+          setChar(data.data.data.results);
+        }
+        if (value.length >= 3) {
+          const data = await axios.get(
+            `${api}characters?nameStartsWith=${value}&ts=${time}&apikey=${publicKey}&hash=${hash}`
+          );
+          setChar(data.data.data.results);
+        }
+      } catch (error) {
+        setError(true);
       }
     };
     load();
@@ -48,7 +53,7 @@ const SearchPage = () => {
             onChange={handleChange}
           />
         </form>
-        <CharList char={char} />
+        <CharList char={char} error={error} />
       </div>
       <Footer showBtn />
     </>

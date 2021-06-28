@@ -2,19 +2,24 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./styles.scss";
 
-const CharList = ({ char }) => {
+const CharList = ({ char, error }) => {
   let history = useHistory();
+
+  console.log(error);
 
   return (
     <div className="charList__container_superior">
-      {char.length ? "" : <h1>CARREGANDO...</h1>}
+      {error ? <h1>Algo deu errado...</h1> : null}
+      {char.length || error === true ? "" : <h1>CARREGANDO...</h1>}
       <table className="charList__container">
         <thead>
-          <tr>
-            <th>Personagens</th>
-            <th className="charList__title_info">Séries</th>
-            <th className="charList__title_info">Eventos</th>
-          </tr>
+          {char.length || error === true ? null : (
+            <tr>
+              <th>Personagens</th>
+              <th className="charList__title_info">Séries</th>
+              <th className="charList__title_info">Eventos</th>
+            </tr>
+          )}
         </thead>
         <tbody>
           {char.map((character) => {
