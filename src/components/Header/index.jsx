@@ -14,7 +14,7 @@ const Header = () => {
           <p>Teste Front-end</p>
         </div>
 
-        <p className="header__owner_mini">SR</p>
+        <p className="header__owner_mini">CB</p>
       </div>
     </div>
   );
