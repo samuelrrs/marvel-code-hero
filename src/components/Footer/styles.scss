@@ -2,10 +2,29 @@
     background-color: white;
     padding: 2rem;
     bottom: 0px;
-    margin-top: 10rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
     width: 100%;
+    ul {
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
+        list-style: none;
+    }
+    button {
+        background-color: #5dafff;
+        font-size: 14px;
+        padding: 6px;
+        color: white;
+        border-radius: 4px;
+        border: none;
+        font-family: "PT Sans Caption", sans-serif;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 }

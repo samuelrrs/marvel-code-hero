@@ -8,13 +8,13 @@ import api from "../../services/api";
 const SearchPage = () => {
   const [char, setChar] = useState([]);
   const [value, setValue] = useState("");
-  const { page, publicKey, time, hash } = PageData();
+  const { page, publicKey, time, hash, limit } = PageData();
 
   useEffect(() => {
     const load = async () => {
       if (value === "") {
         const data = await axios.get(
-          `${api}characters?&limit=10&offset=${page}&ts=${time}&apikey=${publicKey}&hash=${hash}`
+          `${api}characters?&limit=${limit}&offset=${page}&ts=${time}&apikey=${publicKey}&hash=${hash}`
         );
         setChar(data.data.data.results);
       }
@@ -26,7 +26,7 @@ const SearchPage = () => {
       }
     };
     load();
-  }, [value, page, publicKey, time, hash]);
+  }, [value, page, publicKey, time, hash, limit]);
 
   const handleChange = (e) => {
     e.preventDefault();

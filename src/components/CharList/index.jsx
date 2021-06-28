@@ -6,7 +6,7 @@ const CharList = ({ char }) => {
   let history = useHistory();
 
   return (
-    <>
+    <div className="charList__container_superior">
       {char.length ? "" : <h1>CARREGANDO...</h1>}
       <table className="charList__container">
         <thead>
@@ -51,7 +51,7 @@ const CharList = ({ char }) => {
           })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

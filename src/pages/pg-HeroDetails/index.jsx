@@ -6,10 +6,9 @@ import api from "../../services/api";
 import "./styles.scss";
 
 const HeroDetails = () => {
-  const [hero, setHero] = useState("");
   const [comic, setComic] = useState([]);
 
-  const { publicKey, hash, time } = PageData();
+  const { publicKey, hash, time, hero, setHero } = PageData();
   const heroId = window.location.pathname.replace("/characters", "");
   let history = useHistory();
 
@@ -21,7 +20,7 @@ const HeroDetails = () => {
       setHero(data.data.data.results[0]);
     };
     loadHero();
-  }, [publicKey, hash, time, heroId]);
+  }, [publicKey, hash, time, heroId, hero, setHero]);
   useEffect(() => {
     const loadComicHero = async () => {
       const dataComic = await axios.get(
