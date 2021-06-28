@@ -1,6 +1,5 @@
-import Footer from "./components/Footer";
 import Header from "./components/Header";
-import PageProvider from "./context/PaginationContext";
+import PageProvider from "./context/StatesContext";
 import Routes from "./routes/routes";
 import "./styles/global.css";
 
@@ -12,7 +11,6 @@ function App() {
         <div className="App">
           <Routes />
         </div>
-        <Footer />
       </PageProvider>
     </>
   );

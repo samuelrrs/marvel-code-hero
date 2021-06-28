@@ -2,8 +2,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import CharList from "../../components/CharList";
 import "./styles.scss";
-import { PageData } from "../../context/PaginationContext";
 import api from "../../services/api";
+import { PageData } from "../../context/StatesContext";
+import Footer from "../../components/Footer";
 
 const SearchPage = () => {
   const [char, setChar] = useState([]);
@@ -34,20 +35,23 @@ const SearchPage = () => {
   };
 
   return (
-    <div className="searchPage__listResults">
-      <h1>Busca de personagens</h1>
-      <p>Nome do personagem</p>
-      <form>
-        <input
-          type="text"
-          placeholder="Search"
-          autoFocus
-          value={value}
-          onChange={handleChange}
-        />
-      </form>
-      <CharList char={char} />
-    </div>
+    <>
+      <div className="searchPage__listResults">
+        <h1>Busca de personagens</h1>
+        <p>Nome do personagem</p>
+        <form>
+          <input
+            type="text"
+            placeholder="Search"
+            autoFocus
+            value={value}
+            onChange={handleChange}
+          />
+        </form>
+        <CharList char={char} />
+      </div>
+      <Footer showBtn />
+    </>
   );
 };
 

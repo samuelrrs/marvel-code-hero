@@ -6,6 +6,7 @@ export const PageContext = createContext();
 export default function PageProvider({ children }) {
   const [page, setPage] = useState(0);
   const [char, setChar] = useState([]);
+  const [hero, setHero] = useState([]);
 
   const publicKey = "a56b6486e5d190a8486613dc9ea4deb7";
   const time = Number(new Date());
@@ -25,6 +26,8 @@ export default function PageProvider({ children }) {
         limit,
         char,
         setChar,
+        hero,
+        setHero,
       }}
     >
       {children}
@@ -44,6 +47,8 @@ export function PageData() {
     limit,
     char,
     setChar,
+    hero,
+    setHero,
   } = context;
   return {
     page,
@@ -55,5 +60,7 @@ export function PageData() {
     limit,
     char,
     setChar,
+    hero,
+    setHero,
   };
 }
