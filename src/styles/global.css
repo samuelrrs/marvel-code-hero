@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e5e5e5;
+    font-family: "PT Sans Caption", sans-serif;
+    height: 100%;
+}
+.App {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+#root {
+    height: 100%;
+}
