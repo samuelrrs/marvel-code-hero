@@ -58,7 +58,6 @@ const HeroDetails = () => {
           <h3>Ops, sem quadrinhos para mostrar</h3>
         )}
         <ul>
-          {console.log("QUADRIN", comic)}
           {comic?.slice(0, 5).map((item) => {
             return (
               <li key={item.title}>
