@@ -29,15 +29,15 @@ const CharList = ({ char, error }) => {
               <>
                 <tr
                   className="charList__item-list"
-                  key={character.id}
                   onClick={sendToDetails}
                 >
-                  <td className="charList__item_content">
+                  <td className="charList__item_content" key={character.id}>
                     <img
                       src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                       alt="CharacterPhoto"
+                      
                     />
-                    <p>{character.name}</p>
+                    <p  key={character.id}>{character.name}</p>
                   </td>
                   <td className="charList__char_info">
                     {character.series.items.slice(0, 3).map((serie) => {

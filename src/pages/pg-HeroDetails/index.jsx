@@ -21,7 +21,7 @@ const HeroDetails = () => {
       setHero(data.data.data.results[0]);
     };
     loadHero();
-  }, [publicKey, hash, time, heroId, hero, setHero]);
+  }, [publicKey, heroId]);
   useEffect(() => {
     const loadComicHero = async () => {
       const dataComic = await axios.get(
@@ -31,7 +31,7 @@ const HeroDetails = () => {
       setComic(dataComic.data.data.results);
     };
     loadComicHero();
-  }, [publicKey, hash, time, heroId]);
+  }, [publicKey, heroId]);
 
   const goHome = () => {
     history.push("/");
