@@ -54,6 +54,9 @@
         align-items: center;
         img {
             width: 20%;
+            @media (max-width: 770px) {
+                width: 80%;
+            }
         }
     }
 }
