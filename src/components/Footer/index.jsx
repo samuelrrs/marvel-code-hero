@@ -13,7 +13,6 @@ const Footer = ({ showBtn }) => {
 
   function onPageChange(page) {
     setPage((page - 1) * limit);
-    console.log(page);
   }
 
   return (

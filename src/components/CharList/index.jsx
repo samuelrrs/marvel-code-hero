@@ -5,7 +5,6 @@ import "./styles.scss";
 const CharList = ({ char, error }) => {
   let history = useHistory();
 
-  console.log(error);
 
   return (
     <div className="charList__container_superior">
